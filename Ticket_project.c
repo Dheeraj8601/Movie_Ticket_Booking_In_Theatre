@@ -30,6 +30,7 @@ struct Movie movies[MAX_MOVIES];
 
 // Function to add a new movie
 void addMovie() {
+    system("cls");
     if (movieCount >= MAX_MOVIES) {
         printf("Maximum number of movies reached!\n");
         return;
@@ -51,6 +52,25 @@ void addMovie() {
 
 // Function to display movie list
 void displayMovies() {
+    system("cls");
+    if (movieCount == 0) {
+        printf("No movies available.\n");
+        return;
+    }
+
+    printf("\n======================= Movie List ========================\n");
+    printf("%-5s%-30s%-20s%-10s\n", "ID", "Name", "Genre", "Price");
+    printf("------------------------------------------------------------\n");
+
+    for (int i = 0; i < movieCount; i++) {
+        printf("%-5d%-30s%-20s$%.2lf\n", movies[i].id, movies[i].name, movies[i].genre, movies[i].price);
+    }
+
+    printf("============================================================\n");
+}
+
+void displayMovies2() {
+     system("cls");
     if (movieCount == 0) {
         printf("No movies available.\n");
         return;
@@ -74,6 +94,7 @@ double calculateTicketPrice(double moviePrice, int ticketCount) {
 
 // Function to generate a creative bill
 void generateBill(struct Booking booking, struct Movie movie) {
+    system("cls");
     printf("\n==================== Movie Ticket Booking Receipt ====================\n");
     printf("Movie: %s\n", movie.name);
     printf("Genre: %s\n", movie.genre);
@@ -92,7 +113,8 @@ int main() {
     int selectedMovie; // Declare selectedMovie here
 
     while (1) {
-        printf("\nTicket Booking System\n");
+
+        printf("\n==================== Ticket Booking System ====================\n");
         printf("1. Add Movie\n");
         printf("2. View Movie List\n");
         printf("3. Book Tickets\n");
@@ -106,7 +128,7 @@ int main() {
                 addMovie();
                 break;
             case 2:
-                displayMovies();
+                displayMovies2();
                 break;
             case 3:
                 if (movieCount == 0) {
@@ -156,3 +178,4 @@ int main() {
 
     return 0;
 }
+
