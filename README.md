@@ -15,4 +15,4 @@ This console application is designed to manage movie information, facilitate tic
 
 1. Clone the repository to your local machine.
    ```bash
-   git clone https://github.com/your-username/movie-ticket-booking.git
+   git clone https://github.com/Dheeraj8601/Movie-Ticket-Booking_In_Theatre.git
